@@ -16,6 +16,7 @@ services:
     command: > # PODE COLOCAR EM UM ARQUIVO entrypoint.sh TAMBEM
         sh -c "composer install &&
                php artisan migrate &&
+               php artisan install:api &&
                php -S 0.0.0.0:8000 -t public"
   postgres:
     image: postgres:latest
