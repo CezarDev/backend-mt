@@ -39,7 +39,7 @@ class UploadController extends Controller
     }
 
     public function visualizar($hash) {
-        $foto = FotoPessoa::where('fp_hash', $hash)->firstOrFail();n
+        $foto = FotoPessoa::where('fp_hash', $hash)->firstOrFail();
         $path = "fotos/{$hash}.*"; // tipo wildcard
 
         $file = collect(Storage::disk('minio')->files('fotos'))->first(fn($f) => str_contains($f, $hash));
