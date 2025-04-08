@@ -215,6 +215,9 @@ GET /api/servidores-efetivos?page=1
   "total": 1
 }
 ```
-
+### Teste Automatizado Servidor Efetivo
+```bash
+php artisan test --filter=ServidorEfetivoTest
+```
 
 
