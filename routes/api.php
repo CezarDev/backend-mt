@@ -10,6 +10,9 @@ use App\Http\Controllers\{
     UploadController
 };
 
+Route::post('/login', [AuthController::class, 'login']);
+Route::post('/renovar-token', [AuthController::class, 'renovarToken']);
+
 Route::middleware('auth:sanctum')->group(function () {
     // CRUDs
     Route::apiResource('servidores-efetivos', ServidorEfetivoController::class);
@@ -24,4 +27,7 @@ Route::middleware('auth:sanctum')->group(function () {
     // Upload de fotos
     Route::post('/upload-fotos', [UploadController::class, 'upload']);
     Route::get('/fotos/{fp_hash}', [UploadController::class, 'visualizar']);
+
+    // Logout
+    Route::post('/logout', [AuthController::class, 'logout']);
 });
