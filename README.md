@@ -1,4 +1,4 @@
-# Configurar o .env
+## Configurar o .env
 
 * DB_CONNECTION=pgsql
 * DB_HOST=postgres
@@ -14,20 +14,23 @@
 * AWS_BUCKET=fotos
 * AWS_ENDPOINT=http://minio:9000
 
-# Subir os contêineres
+## Subir os contêineres
 * docker-compose up -d --build
 
-# Acessar o container do Laravel
+## Acessar o container do Laravel
 * docker exec -it laravel bash
 
-# DRIVER DO S3
+## DRIVER DO S3
 * composer require league/flysystem-aws-s3-v3
 
-# Sanctum
+## Sanctum
 
 * composer require laravel/sanctum
 * php artisan vendor:publish --provider="Laravel\\Sanctum\\SanctumServiceProvider"
 * php artisan migrate
 
-
+## Acessando MinIO
+### insira as credencias setadas no docker-compose.yml
+ * http://localhost:9000
+### crie o bucket fotos
 
